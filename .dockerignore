@@ -1,0 +1,49 @@
+**/.git
+
+# python envs
+venv
+.env
+
+# do not leak credentials
+.docker
+**/*.sqlite3
+**/*.db
+**/*.log
+
+# Byte-compiled / optimized / DLL files
+**/__pycache__
+**/*.pyc
+**/*.pyo
+.eggs
+**/*.egg-info
+build
+
+# Unit test / coverage reports
+htmlcov
+.tox
+.nox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+cover
+.hypothesis
+.pytest_cache
+.ruff_cache
+
+# editor files
+**/*~
+**/*.swp
+**/*.tmproj
+.vscode
+
+# mypy
+.mypy_cache
+.dmypy.json
+dmypy.json
+
+# misc
+spike.py
+**/.DS_Store

@@ -1,19 +1,21 @@
+**/.git
+
 # python envs
 venv
 .env
 
 # do not leak credentials
 .docker
-*.sqlite3
-*.db
-*.log
+**/*.sqlite3
+**/*.db
+**/*.log
 
 # Byte-compiled / optimized / DLL files
-__pycache__
-*.pyc
-*.pyo
+**/__pycache__
+**/*.pyc
+**/*.pyo
 .eggs
-*.egg-info
+**/*.egg-info
 build
 
 # Unit test / coverage reports
@@ -32,9 +34,9 @@ cover
 .ruff_cache
 
 # editor files
-*~
-*.swp
-*.tmproj
+**/*~
+**/*.swp
+**/*.tmproj
 .vscode
 
 # mypy
@@ -44,4 +46,4 @@ dmypy.json
 
 # misc
 spike.py
-.DS_Store
+**/.DS_Store

@@ -9,9 +9,9 @@ venv
 *.log
 
 # Byte-compiled / optimized / DLL files
-**/__pycache__
-**/*.pyc
-**/*.pyo
+__pycache__
+*.pyc
+*.pyo
 .eggs
 *.egg-info
 build
@@ -26,19 +26,19 @@ htmlcov
 nosetests.xml
 coverage.xml
 *.cover
-*.py,cover
+cover
 .hypothesis
 .pytest_cache
-cover
+.ruff_cache
 
 # editor files
 *~
-.*.swp
+*.swp
 *.tmproj
 .vscode
 
 # mypy
-.mypy_cache/
+.mypy_cache
 .dmypy.json
 dmypy.json
 

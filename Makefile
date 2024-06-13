@@ -13,7 +13,7 @@ format:
 .PHONY: format
 
 pr-check:
-	$(CONTAINER_ENGINE) build -f Dockerfile.cicd --build-arg MAKE_TARGET=test $(foreach arg,$(BUILD_ARGS),--build-arg $(arg)) .
+	$(CONTAINER_ENGINE) build --build-arg MAKE_TARGET=test $(foreach arg,$(BUILD_ARGS),--build-arg $(arg)) .
 .PHONY: pr-check
 
 test:
@@ -24,7 +24,7 @@ test:
 .PHONY: test
 
 build-deploy:
-	$(CONTAINER_ENGINE) build -f Dockerfile.cicd --build-arg MAKE_TARGET=pypi $(foreach arg,$(BUILD_ARGS),--build-arg $(arg)) .
+	$(CONTAINER_ENGINE) build --build-arg MAKE_TARGET=pypi $(foreach arg,$(BUILD_ARGS),--build-arg $(arg)) .
 .PHONY: build-deploy
 
 pypi:

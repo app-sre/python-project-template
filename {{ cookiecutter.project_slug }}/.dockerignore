@@ -2,6 +2,7 @@
 
 # python envs
 venv
+.venv
 .env
 
 # do not leak credentials
@@ -47,3 +48,4 @@ dmypy.json
 # misc
 spike.py
 **/.DS_Store
+tmp/

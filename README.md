@@ -1,38 +1,24 @@
-# python-project-template
+# AppSRE Python-project-template
 
-[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-[![PyPI](https://img.shields.io/pypi/v/python-project-template)][pypi-link]
-[![PyPI platforms][pypi-platforms]][pypi-link]
-![PyPI - License](https://img.shields.io/pypi/l/python-project-template)
-
-This is a template for a Python project. It can be used via GitHub's template feature or by copying and pasting the files into your project.
+This is a template for a Python project.
 
 ## Features
 
-- [Poetry](https://python-poetry.org/) for dependency management.
-- [Ruff](https://docs.astral.sh/ruff/) for linting and formatting.
-- Containerized CI/CD tasks.
-- Secure `.gitignore` and `.dockerignore` files.
-- Example code and tests.
+- [Uv](https://docs.astral.sh/uv/) for dependency management
+- [Ruff](https://docs.astral.sh/ruff/) for linting and formatting
+- Konflux CI tasks
+- Secure `.gitignore` and `.dockerignore` files
+- Example code and tests
 
 ## Usage
 
-1. Create a new GitHub repository using this template.
-1. Replace the dummy project name `python-project-template` with your project name.
+1. Create a new blank repository on GitHub.
+1. Clone your new repository to your local machine.
+1. Run:
 
    ```bash
-    find . -type d -name .git -prune  -o -type f -exec sed -i "s/python-project-template/your-project-name/g" {} \;
-    git mv python_project_template $PROJECT_PACKAGE
-    find . -type d -name .git -prune  -o -type f -exec sed -i "s/python_project_template/$PROJECT_PACKAGE/g" {} \;
-    ```
+   uvx cookiecutter http://github.com/app-sre/python-project-template
+   ```
 
-1. Replace the dummy python package name `python_project_template` (snake_case!) with your package name.
-
-   ```bash
-    export PROJECT_PACKAGE=your_project_name # snake_case
-    git mv python_project_template $PROJECT_PACKAGE
-    find . -type d -name .git -prune  -o -type f -exec sed -i "s/python_project_template/$PROJECT_PACKAGE/g" {} \;
-    ```
-
-[pypi-link]:                https://pypi.org/project/python-project-template/
-[pypi-platforms]:           https://img.shields.io/pypi/pyversions/python-project-template
+1. Move all files and directories from the generated `{{ cookiecutter.project_slug }}` directory to the root of your repository.
+1. Review the generated files and commit them to your new repository.

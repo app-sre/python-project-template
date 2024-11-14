@@ -2,7 +2,7 @@
 # Base image with defaults for all stages
 FROM registry.access.redhat.com/ubi9/python-{{ cookiecutter.python_version.replace(".", "") }} AS base
 
-# Keep this version tag in sync with pyproject.toml
+# Keep this version tag in sync with pyproject.toml or feel free to remove it
 LABEL konflux.additional-tags="{{ cookiecutter.version }}"
 COPY LICENSE /licenses/
 

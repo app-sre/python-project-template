@@ -7,5 +7,5 @@
   "project_short_description": "Please enter a short description of your project",
   "deployment": ["openshift", "pypi"],
   "version": "0.1.0",
-  "python_version": ["3.11", "3.12", "3.13"]
+  "python_version": ["3.12", "3.11"]
 }

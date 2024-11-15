@@ -15,7 +15,7 @@ COPY --from=ghcr.io/astral-sh/uv:0.5.1@sha256:190cbcca15602bad4531b4310f928fd34a
 
 ENV \
     # use venv from ubi image
-    UV_PROJECT_ENVIRONMENT="/opt/app-root" \
+    UV_PROJECT_ENVIRONMENT=$APP_ROOT \
     # compile bytecode for faster startup
     UV_COMPILE_BYTECODE="true" \
     # disable uv cache. it doesn't make sense in a container

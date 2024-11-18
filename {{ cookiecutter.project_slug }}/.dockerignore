@@ -2,6 +2,7 @@
 
 # python envs
 venv
+.venv
 .env
 
 # do not leak credentials

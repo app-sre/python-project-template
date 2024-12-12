@@ -49,11 +49,10 @@ RUN make test
 # PyPI publish image
 #
 FROM test AS pypi
-# TODO: Add the PyPI credentials from the CI/CD secrets (PYPI_USERNAME, PYPI_PASSWORD)
-RUN make pypi
+# Secrets are owned by root and are not readable by others :(
+USER root
+RUN --mount=type=secret,id=app-sre-pypi-credentials/token make -s pypi
 {%- endif %}
-
-
 {%- if cookiecutter.deployment == 'openshift' %}
 #
 # Production image

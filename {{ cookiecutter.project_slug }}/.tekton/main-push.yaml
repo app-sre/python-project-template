@@ -25,12 +25,17 @@ spec:
     value: Dockerfile
   - name: path-context
     value: .
-  - name: target-stage
 {%- if cookiecutter.deployment == 'openshift' %}
+  - name: target-stage
     value: prod
 {%- endif %}
 {%- if cookiecutter.deployment == 'pypi' %}
+  - name: image-expires-after
+    value: 1d
+  - name: target-stage
     value: pypi
+  - name: additional_secret
+    value: app-sre-pypi-credentials
 {%- endif %}
   pipelineRef:
     resolver: git
@@ -54,8 +59,3 @@ spec:
   - name: git-auth
     secret:
       secretName: {%- raw %}'{{ git_auth_secret }}'{%- endraw %}
-{%- if cookiecutter.deployment == 'pypi' %}
-  - name: pypi-auth
-    secret:
-      secretName: 'pypi-auth'
-{%- endif %}

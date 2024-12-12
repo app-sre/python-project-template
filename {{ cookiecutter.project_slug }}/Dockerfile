@@ -23,7 +23,7 @@ ENV \
 
 COPY pyproject.toml uv.lock ./
 # Test lock file is up to date
-RUN uv lock --locked
+RUN uv lock --check
 # Install the project dependencies
 RUN uv sync --frozen --no-install-project --no-group dev
 

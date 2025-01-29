@@ -11,7 +11,7 @@ COPY LICENSE /licenses/
 # Builder image
 #
 FROM base AS builder
-COPY --from=ghcr.io/astral-sh/uv:0.5.24@sha256:2381d6aa60c326b71fd40023f921a0a3b8f91b14d5db6b90402e65a635053709 /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.5.25@sha256:a73176b27709bff700a1e3af498981f31a83f27552116f21ae8371445f0be710 /uv /bin/uv
 
 ENV \
     # use venv from ubi image

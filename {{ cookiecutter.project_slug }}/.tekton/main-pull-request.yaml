@@ -3,9 +3,9 @@ kind: PipelineRun
 metadata:
   annotations:
     build.appstudio.openshift.io/repo: https://github.com/app-sre/{{ cookiecutter.project_slug }}?rev={%- raw %}{{revision}}{%- endraw %}
-    build.appstudio.redhat.com/commit_sha: {%- raw %}'{{revision}}'{%- endraw %}
-    build.appstudio.redhat.com/pull_request_number: {%- raw %}'{{pull_request_number}}'{%- endraw %}
-    build.appstudio.redhat.com/target_branch: {%- raw %}'{{target_branch}}'{%- endraw %}
+    build.appstudio.redhat.com/commit_sha: {%- raw %} '{{revision}}'{%- endraw %}
+    build.appstudio.redhat.com/pull_request_number: {%- raw %} '{{pull_request_number}}'{%- endraw %}
+    build.appstudio.redhat.com/target_branch: {%- raw %} '{{target_branch}}'{%- endraw %}
     pipelinesascode.tekton.dev/max-keep-runs: "20"
     pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch == "main"
   labels:
@@ -17,9 +17,9 @@ metadata:
 spec:
   params:
   - name: git-url
-    value: {%- raw %}{%- raw %}'{{source_url}}'{%- endraw %}
+    value: {%- raw %} '{{source_url}}'{%- endraw %}
   - name: revision
-    value: {%- raw %}'{{revision}}'{%- endraw %}
+    value: {%- raw %} '{{revision}}'{%- endraw %}
   - name: output-image
     value: quay.io/redhat-user-workloads/app-sre-tenant/{{ cookiecutter.project_slug }}-main/{{ cookiecutter.project_slug }}-main:on-pr-{%- raw %}{{revision}}{%- endraw %}
   - name: image-expires-after
@@ -51,4 +51,4 @@ spec:
             storage: 1Gi
   - name: git-auth
     secret:
-      secretName: {%- raw %}'{{ git_auth_secret }}'{%- endraw %}
+      secretName: {%- raw %} '{{ git_auth_secret }}'{%- endraw %}

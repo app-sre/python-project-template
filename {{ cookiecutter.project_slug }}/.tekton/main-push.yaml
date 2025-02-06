@@ -3,8 +3,8 @@ kind: PipelineRun
 metadata:
   annotations:
     build.appstudio.openshift.io/repo: https://github.com/app-sre/{{ cookiecutter.project_slug }}?rev={%- raw %}{{revision}}{%- endraw %}
-    build.appstudio.redhat.com/commit_sha: {%- raw %}'{{revision}}'{%- endraw %}
-    build.appstudio.redhat.com/target_branch: {%- raw %}'{{target_branch}}'{%- endraw %}
+    build.appstudio.redhat.com/commit_sha: {%- raw %} '{{revision}}'{%- endraw %}
+    build.appstudio.redhat.com/target_branch: {%- raw %} '{{target_branch}}'{%- endraw %}
     pipelinesascode.tekton.dev/max-keep-runs: "20"
     pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch == "main"
   labels:
@@ -16,9 +16,9 @@ metadata:
 spec:
   params:
   - name: git-url
-    value: {%- raw %}'{{source_url}}'{%- endraw %}
+    value: {%- raw %} '{{source_url}}'{%- endraw %}
   - name: revision
-    value: {%- raw %}'{{revision}}'{%- endraw %}
+    value: {%- raw %} '{{revision}}'{%- endraw %}
   - name: output-image
     value: quay.io/redhat-user-workloads/app-sre-tenant/{{ cookiecutter.project_slug }}-main/{{ cookiecutter.project_slug }}-main:{%- raw %}{{revision}}{%- endraw %}
   - name: dockerfile
@@ -58,4 +58,4 @@ spec:
             storage: 1Gi
   - name: git-auth
     secret:
-      secretName: {%- raw %}'{{ git_auth_secret }}'{%- endraw %}
+      secretName: {%- raw %} '{{ git_auth_secret }}'{%- endraw %}

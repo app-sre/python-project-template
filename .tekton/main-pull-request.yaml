@@ -42,7 +42,8 @@ spec:
       value: main
     - name: pathInRepo
       value: pipelines/multi-arch-build-pipeline.yaml
-  taskRunTemplate: {}
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-python-project-template-main
   workspaces:
   - name: workspace
     volumeClaimTemplate:

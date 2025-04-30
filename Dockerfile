@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/python-312@sha256:22e5e173c8d702590864f4bf2fef10789f8ff2c308a16cd474cc5f7b8ab41eb2 AS test
+FROM registry.access.redhat.com/ubi9/python-312@sha256:cf70b25ffec80e5b0e7dae192a6ab181af877ed27c24dbcce6bec6e9238f994c AS test
 COPY --from=ghcr.io/astral-sh/uv:0.7.0@sha256:bc574e793452103839d769a20249cfe4c8b6e40e5c29fda34ceee26120eabe3b /uv /bin/uv
 
 ENV \

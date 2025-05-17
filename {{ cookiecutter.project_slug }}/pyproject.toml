@@ -11,7 +11,7 @@ readme = "README.md"
 requires-python = "~= {{ cookiecutter.python_version }}.0"
 dependencies = [
     # 'uv add/remove XXX' to add and remove dependencies
-    "rich ~=13.6",
+    "rich ~=14.0",
 ]
 
 [project.urls]

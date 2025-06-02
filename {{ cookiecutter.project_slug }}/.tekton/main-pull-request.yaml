@@ -7,7 +7,7 @@ metadata:
     build.appstudio.redhat.com/pull_request_number: {%- raw %} '{{pull_request_number}}'{%- endraw %}
     build.appstudio.redhat.com/target_branch: {%- raw %} '{{target_branch}}'{%- endraw %}
     pipelinesascode.tekton.dev/max-keep-runs: "20"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch == "main"
+    pipelinesascode.tekton.dev/on-cel-expression: (event == "pull_request" && target_branch == "main") || (event == "push" && target_branch.startsWith("gh-readonly-queue/main/"))
   labels:
     appstudio.openshift.io/application: {{ cookiecutter.project_slug }}-main
     appstudio.openshift.io/component: {{ cookiecutter.project_slug }}-main

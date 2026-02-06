@@ -24,7 +24,7 @@ dev = [
     # Development dependencies
     "ruff ~=0.7",
     "mypy ~=1.13",
-    "pytest ~=8.4.0",
+    "pytest ~=9.0.2",
     "pytest-cov ~=7.0.0",
 ]
 

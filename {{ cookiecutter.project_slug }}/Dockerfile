@@ -37,6 +37,10 @@ RUN uv sync --frozen --no-group dev
 #
 FROM builder AS test
 
+USER root
+RUN microdnf install -y make
+USER 1001
+
 COPY Makefile ./
 RUN uv sync --frozen
 

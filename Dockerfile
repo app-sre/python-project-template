@@ -6,5 +6,9 @@ ENV \
     # disable uv cache. it doesn't make sense in a container
     UV_NO_CACHE=true
 
+USER root
+RUN microdnf install -y make
+USER 1001
+
 COPY . .
 RUN make _test

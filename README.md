@@ -31,8 +31,7 @@ This is a template for a Python project.
         Choose from [1/2] (1):
     [8/9] version (0.1.0):
     [9/9] Select python_version
-        1 - 3.12
-        2 - 3.11
+        1 - 3.14
         Choose from [1/2] (1):
    ```
 

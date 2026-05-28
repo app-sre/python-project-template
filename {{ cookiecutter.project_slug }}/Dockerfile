@@ -1,6 +1,6 @@
 #
 # Base image with defaults for all stages
-FROM registry.access.redhat.com/ubi9/python-{{ cookiecutter.python_version.replace(".", "") }} AS base
+FROM registry.access.redhat.com/ubi10/python-{{ cookiecutter.python_version.replace(".", "") }}-minimal AS base
 
 # Keep this version tag in sync with pyproject.toml or feel free to remove it
 LABEL konflux.additional-tags="{{ cookiecutter.version }}"
@@ -36,6 +36,10 @@ RUN uv sync --frozen --no-group dev
 # Test image
 #
 FROM builder AS test
+
+USER root
+RUN microdnf install -y make
+USER 1001
 
 COPY Makefile ./
 RUN uv sync --frozen

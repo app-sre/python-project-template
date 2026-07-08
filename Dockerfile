@@ -1,5 +1,5 @@
 FROM registry.access.redhat.com/ubi10/python-314-minimal@sha256:92f2b9ef3d2fe255f5a2200f97bf4f14a95dc120bd19bcbc9f84a2f10e4af683 AS test
-COPY --from=ghcr.io/astral-sh/uv:0.11.25@sha256:1e3808aa9023d0980e7c15b1fa7c1ac16ff35925780cf5c459858b2d693f01a9 /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.11.28@sha256:0f36cb9361a3346885ca3677e3767016687b5a170c1a6b88465ec14aefec90aa /uv /bin/uv
 
 ENV \
     UV_PYTHON="/usr/bin/python3.14" \

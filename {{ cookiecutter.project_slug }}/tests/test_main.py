@@ -1,1 +1,1 @@
-import {{ cookiecutter.project_module }}.__main__  # noqa: F401 - test imports
+import {{ cookiecutter.project_module }}.__main__  # ruff: ignore[unused-import] - test imports

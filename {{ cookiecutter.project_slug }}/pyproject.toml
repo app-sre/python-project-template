@@ -22,10 +22,10 @@ documentation = "https://github.com/app-sre/{{ cookiecutter.project_slug }}"
 [dependency-groups]
 dev = [
     # Development dependencies
-    "ruff ~=0.16",
-    "mypy ~=2.1",
-    "pytest ~=9.1.0",
-    "pytest-cov ~=7.1.0",
+    "ruff==0.16.1",
+    "mypy==2.3.0",
+    "pytest==9.1.1",
+    "pytest-cov==7.1.0",
 ]
 
 [project.scripts]
@@ -44,7 +44,7 @@ only-include = ["{{ cookiecutter.project_module }}"]
 # Ruff configuration
 [tool.ruff]
 line-length = 88
-src = ["{{ cookiecutter.project_module }}"]
+src = ["{{ cookiecutter.project_module }}", "tests"]
 extend-exclude = [
     # exclude some common cache and tmp directories
     ".local",

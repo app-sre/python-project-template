@@ -44,7 +44,7 @@ only-include = ["{{ cookiecutter.project_module }}"]
 # Ruff configuration
 [tool.ruff]
 line-length = 88
-src = ["{{ cookiecutter.project_module }}"]
+src = ["{{ cookiecutter.project_module }}", "tests"]
 extend-exclude = [
     # exclude some common cache and tmp directories
     ".local",

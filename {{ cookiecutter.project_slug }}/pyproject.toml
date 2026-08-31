@@ -22,7 +22,7 @@ documentation = "https://github.com/app-sre/{{ cookiecutter.project_slug }}"
 [dependency-groups]
 dev = [
     # Development dependencies
-    "ruff==0.16.4",
+    "ruff==0.16.5",
     "mypy==2.3.1",
     "pytest==9.1.1",
     "pytest-cov==7.1.0",

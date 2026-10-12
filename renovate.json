@@ -1,4 +1,29 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>app-sre/shared-pipelines//renovate/default.json"]
+  "extends": ["github>app-sre/shared-pipelines//renovate/default.json"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Track shared-pipelines pipelineRef revision",
+      "managerFilePatterns": ["/^\\.tekton/.*\\.ya?ml$/"],
+      "matchStrings": [
+        "github\\.com/app-sre/shared-pipelines(?:\\.git)?[\\s\\S]{0,200}?name: revision\\s+value: (?<currentDigest>[0-9a-f]{40})",
+        "github\\.com/app-sre/shared-pipelines(?:\\.git)?[\\s\\S]{0,200}?name: revision\\s+value: (?<currentValue>main)"
+      ],
+      "depNameTemplate": "https://github.com/app-sre/shared-pipelines",
+      "datasourceTemplate": "git-refs",
+      "currentValueTemplate": "main",
+      "autoReplaceStringTemplate": "github.com/app-sre/shared-pipelines\\n    - name: revision\\n      value: {{{newDigest}}}"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Shared-pipelines pin updates: dedicated PR, no automerge during pilot",
+      "matchDepNames": ["https://github.com/app-sre/shared-pipelines"],
+      "pinDigests": true,
+      "groupName": "shared-pipelines-pin",
+      "groupSlug": "shared-pipelines-pin",
+      "automerge": false
+    }
+  ]
 }

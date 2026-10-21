@@ -13,7 +13,7 @@
       "depNameTemplate": "https://github.com/app-sre/shared-pipelines",
       "datasourceTemplate": "git-refs",
       "currentValueTemplate": "main",
-      "autoReplaceStringTemplate": "github.com/app-sre/shared-pipelines\\n    - name: revision\\n      value: {{{newDigest}}}"
+      "autoReplaceStringTemplate": "github.com/app-sre/shared-pipelines\n    - name: revision\n      value: {{{newDigest}}}"
     }
   ],
   "packageRules": [

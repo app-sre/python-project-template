@@ -18,12 +18,12 @@
   ],
   "packageRules": [
     {
-      "description": "Shared-pipelines pin updates: dedicated PR, no automerge during pilot",
+      "description": "Shared-pipelines pin updates: dedicated PR, automerge after green checks",
       "matchDepNames": ["https://github.com/app-sre/shared-pipelines"],
       "pinDigests": true,
       "groupName": "shared-pipelines-pin",
       "groupSlug": "shared-pipelines-pin",
-      "automerge": false
+      "automerge": true
     }
   ]
 }

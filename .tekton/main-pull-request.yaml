@@ -39,7 +39,7 @@ spec:
     - name: url
       value: https://github.com/app-sre/shared-pipelines
     - name: revision
-      value: main
+      value: 57c9515bfb379147411423e22faf0dbaca3246a7
     - name: pathInRepo
       value: pipelines/multi-arch-build-pipeline.yaml
   taskRunTemplate:

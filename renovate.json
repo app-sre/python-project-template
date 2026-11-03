@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>rhur-pixel/shared-pipelines//renovate/default.json#appsre-15540-pipeline-pin-manager"],
+  "extends": ["github>app-sre/shared-pipelines//renovate/default.json"],
   "packageRules": [
     {
       "description": "Shared-pipelines pin updates: dedicated PR, automerge after green checks",
